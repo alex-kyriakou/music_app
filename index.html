@@ -7,7 +7,10 @@
 
     <title>Music App</title>
     <!-- Box Icons -->
-    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
     <!-- Custom JS -->
@@ -16,20 +19,22 @@
   <body>
     <div class="app-wrapper">
       <div class="player">
-        <div class="song-img-now"></div>
+        <div class="song-img"></div>
         <div class="song-details">
-          <h1 class="song-title">Forget me too ft.Halsey</h1>
-          <h2 class="song-sub-title">Machine Gun Kelly</h2>
+          <h2 class="song-title">_Alpha-Theta_</h2>
+          <h class="song-sub-title">DVS1_(Axis_Records)</h>
         </div>
         <div class="player-controls">
-          <a href="#" id="backward"
-            ><box-icon name="skip-previous"></box-icon
+          <a href="#" class="skip-btn skip-back"
+            ><i class="bx bx-skip-previous"></i
           ></a>
-          <a href="#" id="play"><box-icon name="play"></box-icon></a>
-          <a href="#" id="forward"><box-icon name="skip-next"></box-icon></a>
+          <a href="#" class="play-btn"><i class="bx bx-play"></i></a>
+          <a href="#" class="skip-btn skip-next"
+            ><i class="bx bx-skip-next"></i
+          ></a>
         </div>
-        <div class="next-song">
-          <p><small>Next up:</small>kindest regards by witt lowry</p>
+        <div class="next-up">
+          <p>Next up: <span>kindest regards by witt lowry</span></p>
         </div>
       </div>
     </div>

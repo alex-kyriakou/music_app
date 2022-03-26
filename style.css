@@ -6,6 +6,128 @@
   box-sizing: border-box;
 }
 
+:root {
+  --dark-bg: #252053;
+  --player: hsla(254, 57%, 10%, 0.671);
+  --skip-btns: #b4afef;
+  --light-grey: #c8c7d3;
+  --purple: #a953fd;
+}
+
 body {
-  background: #ccc;
+  background-color: var(--dark-bg);
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+
+i {
+  color: #fff;
+}
+
+.app-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.player {
+  background-color: var(--player);
+  padding: 100px 40px;
+  width: 414px;
+  border-radius: 0.7rem;
+  box-shadow: 0px 3px 12px rgba(141, 137, 137, 0.15);
+}
+
+.song-img {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  background-color: rgb(254, 72, 128);
+  max-width: 100%;
+  width: 200px;
+  margin-bottom: 50px;
+  border-radius: 50%;
+  box-shadow: 0px 3px 12px rgba(94, 16, 197, 0.5);
+  background-image: url(tracks/BetaSensoryMotorRhythm_FRONT.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.song-img:after {
+  content: "";
+  padding-top: 100%;
+  display: block;
+  animation: img_hover;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+.song-img::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  bottom: -20px;
+  left: -20px;
+  border: 3px solid rgb(142, 72, 254);
+  box-shadow: rgba(224, 163, 230, 0.493) 3px 3px 6px 2px inset,
+    rgba(200, 185, 231, 0.938) 3px 3px 6px 2px inset,
+    rgba(94, 16, 197, 0.5) -3px -3px 6px 10px inset;
+  border-radius: 50%;
+  animation: img_hover;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes img_hover {
+  from {
+    transform: rotate(0deg, 360deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.song-details {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.song-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.song-sub-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--light-grey);
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.play-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 75px;
+  height: 75px;
+  line-height: 75px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  font-size: 2.5rem;
+  background-color: var(--purple);
+}
+
+a {
+  text-decoration: none;
 }
