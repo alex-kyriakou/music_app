@@ -140,7 +140,7 @@ i {
 }
 
 .skip-btn i:active {
-  color: rgba(254, 72, 127, 0.801);
+  color: var(--purple);
   transition: 0.1s;
 }
 
@@ -231,8 +231,22 @@ i {
   text-transform: capitalize;
 }
 
-.next-up span {
+.next-up p span {
   font-weight: 400;
   font-style: italic;
   margin-left: 0.5rem;
+  color: rgb(0, 208, 255);
+}
+
+.next-up p {
+  font-weight: 500;
+  color: var(--purple);
+}
+
+@media (max-width: 414px) {
+  .player {
+    min-height: 100vh;
+    border-radius: none;
+    padding: 75px 30px;
+  }
 }
