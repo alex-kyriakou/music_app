@@ -7,8 +7,8 @@
 }
 
 :root {
-  --dark-bg: #bda4c7;
-  --player: hsla(254, 57%, 10%, 0.842);
+  --dark-bg: #050835de;
+  --player: hsla(254, 57%, 10%, 0.89);
 
   --skip-btns: #b4afef;
   --light-grey: #c8c7d3;
@@ -21,16 +21,6 @@ body {
   color: #fff;
 }
 
-i {
-  color: #fff;
-}
-
-.skip-btn i {
-  font-size: 2.5rem;
-  color: var(--light-grey);
-  line-height: 2.5;
-}
-
 .app-wrapper {
   display: flex;
   justify-content: center;
@@ -40,6 +30,7 @@ i {
 
 .player {
   background-color: var(--player);
+
   padding: 100px 40px;
   width: 414px;
   border-radius: 0.7rem;
@@ -127,6 +118,32 @@ a {
   text-decoration: none;
 }
 
+i {
+  color: #fff;
+}
+
+.skip-btn i {
+  font-size: 2.5rem;
+  color: var(--light-grey);
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+
+.bx {
+  transition: scale 0.2s ease;
+}
+
+.skip-btn:hover i {
+  box-shadow: rgba(0, 132, 255, 0.5) 0px 2px 25px 0px inset;
+  // box-shadow: rgba(174, 136, 223, 0.5) 0px 2px 16px 0px inset;
+  border-radius: 50%;
+}
+
+.skip-btn i:active {
+  color: rgba(254, 72, 127, 0.801);
+  transition: 0.1s;
+}
+
 .play-btn {
   display: flex;
   align-items: center;
@@ -139,24 +156,42 @@ a {
   border-radius: 50%;
   margin: 0 2rem;
   font-size: 2.5rem;
+  cursor: pointer;
   background-color: var(--purple);
+  box-shadow: rgba(0, 207, 255, 0.19) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  transform: scale(0.85);
+  transition: 0.3s ease;
 }
 
-.play-btn:active {
-  transform: scale(0.98);
+.play-btn:active::after {
+  box-shadow: none;
 }
 
 .play-btn::after {
   content: "";
   padding-top: 100%;
   display: block;
-  border: 6px solid black;
+  border: 1px solid rgb(58, 23, 65);
+
   border-radius: 50%;
   position: absolute;
-  top: -5px;
-  right: -5px;
-  bottom: -5px;
-  left: -5px;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+  transition: 0.2s ease;
+  transform: scale(0.85);
 }
 
 .play-btn:active::after {
@@ -169,17 +204,35 @@ a {
   position: absolute;
   border: 2px solid var(--purple);
   box-shadow: rgba(224, 163, 230, 0.493) 0px 2px 4px 0px,
-    rgba(94, 16, 197, 0.5) 0px 2px 16px 0px;
+    rgba(174, 136, 223, 0.5) 0px 2px 16px 0px;
 
   border-radius: 50%;
   top: -6px;
   right: -6px;
-  bottom: -8px;
+  bottom: -6px;
   left: -6px;
   transition: 0.2s ease-out;
 }
 
+.play-btn:hover {
+  box-shadow: rgba(0, 207, 255, 0.19) 0px -23px 25px 0px inset;
+}
+
 .play-btn:active::before {
-  box-shadow: none;
-  border: none;
+  box-shadow: rgba(224, 163, 230, 0.493) 0px 2px 4px 0px,
+    rgba(174, 136, 223, 0.5) 0px 2px 8px 0px;
+}
+
+.next-up {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.next-up span {
+  font-weight: 400;
+  font-style: italic;
+  margin-left: 0.5rem;
 }
