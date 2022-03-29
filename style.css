@@ -54,7 +54,7 @@ body {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  transition: 0.7s;
+  transition: 0.3s;
 }
 
 .song-img::after {
