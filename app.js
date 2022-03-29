@@ -30,14 +30,16 @@ window.onload = () => {
     },
 
     {
-      title: "Wenn die Masken fallen (Rødhåd Version)",
+      title: "Wenn die Masken fallen (Rødhåd)",
       artist: "Rødhåd",
-      song_path: "media/Wenn die Masken fallen (Rødhåd Version).mp3",
+      song_path: "media/Wenn die Masken fallen (Rødhåd).mp3",
       img_path: "media/Wenn die Masken fallen (Rødhåd Version).jpg",
     },
   ];
 
   play_btn.addEventListener("click", TogglePlaySong);
+  next_btn.addEventListener("click", () => changeSong());
+  prev_btn.addEventListener("click", () => changeSong(false));
 
   initPlayer();
 
@@ -51,6 +53,7 @@ window.onload = () => {
     let song = songs[current_song_index];
 
     song_img_el.style = "background-image: url('" + song.img_path + "')";
+
     song_title_el.innerText = song.title;
     song_artist_el.innerText = song.artist;
 
@@ -70,5 +73,32 @@ window.onload = () => {
       play_btn_icon.classList.remove("bx-pause");
       play_btn_icon.classList.add("bx-play");
     }
+  }
+
+  function changeSong(next = true) {
+    if (next) {
+      current_song_index++;
+      next_song_index = current_song_index + 1;
+
+      if (current_song_index > songs.length - 1) {
+        current_song_index = 0;
+        next_song_index = current_song_index + 1;
+      }
+
+      if (next_song_index > songs.length - 1) {
+        next_song_index = 0;
+      }
+    } else {
+      current_song_index--;
+      next_song_index = current_song_index + 1;
+
+      if (current_song_index < 0) {
+        current_song_index = songs.length - 1;
+        next_song_index = 0;
+      }
+    }
+
+    updatePlayer();
+    TogglePlaySong();
   }
 };

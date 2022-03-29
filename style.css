@@ -43,16 +43,18 @@ body {
   position: relative;
   display: block;
   margin: 0 auto;
-  background-color: rgb(254, 72, 128);
-  max-width: 100%;
+  // background-color: rgb(254, 72, 128);
+
   width: 200px;
   margin-bottom: 50px;
   border-radius: 50%;
-  box-shadow: 0px 3px 12px rgb(94, 16, 197);
+  box-shadow: 0px 3px 12px rgba(94, 16, 197, 0.623);
+
   // background-image: url(media/BetaSensoryMotorRhythm_FRONT.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  transition: 0.7s;
 }
 
 .song-img::after {
@@ -97,7 +99,7 @@ body {
 }
 
 .song-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: rgb(238, 238, 238);
 }
