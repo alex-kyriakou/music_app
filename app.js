@@ -33,7 +33,7 @@ window.onload = () => {
       title: "Wenn die Masken fallen (Rødhåd)",
       artist: "Rødhåd",
       song_path: "media/Wenn die Masken fallen (Rødhåd).mp3",
-      img_path: "media/Wenn die Masken fallen (Rødhåd Version).jpg",
+      img_path: "media/Wenn die Masken fallen (Rødhåd).JPG",
     },
   ];
 
