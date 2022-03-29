@@ -19,22 +19,28 @@
   <body>
     <div class="app-wrapper">
       <div class="player">
-        <div class="song-img"></div>
+        <audio id="music-player"></audio>
+        <div class="song-img" id="song-img"></div>
         <div class="song-details">
-          <h2 class="song-title">_Alpha-Theta_</h2>
-          <h class="song-sub-title">DVS1_(Axis_Records)</h>
+          <h2 id="song-title" class="song-title">_Alpha-Theta_</h2>
+          <h3 id="song-artist" class="song-sub-title">DVS1_(Axis_Records)</h3>
         </div>
         <div class="player-controls">
-          <a href="#" class="skip-btn skip-back"
+          <a href="#" id="prev-btn" class="skip-btn skip-back"
             ><i class="bx bx-skip-previous"></i
           ></a>
-          <a href="#" class="play-btn"><i class="bx bx-play"></i></a>
-          <a href="#" class="skip-btn skip-next"
+          <a href="#" id="play-btn" class="play-btn"
+            ><i id="play-icon" class="bx bx-play"></i
+          ></a>
+          <a href="#" id="next-btn" class="skip-btn skip-next"
             ><i class="bx bx-skip-next"></i
           ></a>
         </div>
         <div class="next-up">
-          <p>Next up : <span>kindest regards by witt lowry</span></p>
+          <p>
+            Next up :
+            <span id="song-next-up">kindest regards by witt lowry</span>
+          </p>
         </div>
       </div>
     </div>

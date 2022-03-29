@@ -49,8 +49,9 @@ body {
   margin-bottom: 50px;
   border-radius: 50%;
   box-shadow: 0px 3px 12px rgb(94, 16, 197);
-  background-image: url(tracks/BetaSensoryMotorRhythm_FRONT.jpg);
-  background-size: contain;
+  // background-image: url(media/BetaSensoryMotorRhythm_FRONT.jpg);
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
 }
 
@@ -96,9 +97,9 @@ body {
 }
 
 .song-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
-  color: #fff;
+  color: rgb(238, 238, 238);
 }
 
 .song-sub-title {
