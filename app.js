@@ -10,6 +10,7 @@ window.onload = () => {
   const next_btn = document.getElementById("next-btn");
 
   const audio_player = document.getElementById("music-player");
+  const progress_bar = document.getElementById("progress-bar");
 
   let current_song_index;
   let next_song_index;
@@ -40,6 +41,35 @@ window.onload = () => {
   play_btn.addEventListener("click", TogglePlaySong);
   next_btn.addEventListener("click", () => changeSong());
   prev_btn.addEventListener("click", () => changeSong(false));
+
+  audio_player.addEventListener("timeupdate", (e) => {
+    const currentTime = e.target.currentTime;
+    const duration = e.target.duration;
+
+    const progressBarWidth = (currentTime / duration) * 100;
+
+    progress_bar.style.width = `${progressBarWidth}%`;
+
+    audio_player.addEventListener("loadeddata", () => {
+      songDuration = document.querySelector(".duration");
+      let audioDuration = audio_player.duration;
+      let totalMin = Math.floor(audioDuration / 60);
+      let totalSec = Math.floor(audioDuration % 60);
+      if (totalSec < 10) {
+        totalSec = `0${totalSec}`;
+      }
+      songDuration.innerText = `${totalMin}:${totalSec}`;
+    });
+
+    let songCurrentTime = document.querySelector(".current");
+    let currentMin = Math.floor(currentTime / 60);
+    let currentSec = Math.floor(currentTime % 60);
+    if (currentSec < 10) {
+      currentSec = `0${currentSec}`;
+    }
+
+    songCurrentTime.innerText = `${currentMin}:${currentSec}`;
+  });
 
   initPlayer();
 
