@@ -110,6 +110,53 @@ body {
   color: var(--light-grey);
 }
 
+.progress-area {
+  height: 6px;
+  width: 100%;
+  background: #25274f;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 2rem 0;
+}
+
+.progress-bar {
+  position: relative;
+  height: 6px;
+  width: 50%;
+  border-radius: 50px;
+  background: blue;
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--purple) 0%, rgb(0, 208, 255) 100%);
+}
+
+.progress-bar::after {
+  content: "";
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  border-radius: 50px;
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%);
+  background: inherit;
+  border: 0.5px solid #fff;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.progress-area:hover .progress-bar::after {
+  opacity: 1;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2px;
+  font-size: 14px;
+  color: #ccc;
+}
+
 .player-controls {
   display: flex;
   align-items: center;
