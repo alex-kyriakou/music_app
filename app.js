@@ -11,7 +11,7 @@ window.onload = () => {
 
   const audio_player = document.getElementById("music-player");
   const progress_bar = document.getElementById("progress-bar");
-  const progress_area = document.querySelector("progress-area");
+  const progress_area = document.querySelector(".progress-area");
 
   let current_song_index;
   let next_song_index;
@@ -74,8 +74,8 @@ window.onload = () => {
   });
 
   // update playing song currentTime according to the progress bar width
-  progress_bar.addEventListener("click", (e) => {
-    let progressWidth = this.clientWidth;
+  progress_area.addEventListener("click", (e) => {
+    let progressWidth = progress_area.clientWidth;
     let clickedOffsetX = e.offsetX;
     let audioDuration = audio_player.duration;
 
