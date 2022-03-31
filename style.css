@@ -204,7 +204,7 @@ i {
   align-items: center;
   justify-content: center;
   position: relative;
-
+  // opacity: 0.7;
   width: 65px;
   height: 65px;
   line-height: 75px;

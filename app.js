@@ -11,6 +11,7 @@ window.onload = () => {
 
   const audio_player = document.getElementById("music-player");
   const progress_bar = document.getElementById("progress-bar");
+  const progress_area = document.querySelector("progress-area");
 
   let current_song_index;
   let next_song_index;
@@ -42,6 +43,7 @@ window.onload = () => {
   next_btn.addEventListener("click", () => changeSong());
   prev_btn.addEventListener("click", () => changeSong(false));
 
+  // Progress bar  loading time
   audio_player.addEventListener("timeupdate", (e) => {
     const currentTime = e.target.currentTime;
     const duration = e.target.duration;
@@ -71,6 +73,15 @@ window.onload = () => {
     songCurrentTime.innerText = `${currentMin}:${currentSec}`;
   });
 
+  // update playing song currentTime according to the progress bar width
+  progress_bar.addEventListener("click", (e) => {
+    let progressWidth = this.clientWidth;
+    let clickedOffsetX = e.offsetX;
+    let audioDuration = audio_player.duration;
+
+    audio_player.currentTime = (clickedOffsetX / progressWidth) * audioDuration;
+  });
+
   initPlayer();
 
   function initPlayer() {
@@ -79,6 +90,7 @@ window.onload = () => {
     updatePlayer();
   }
 
+  // Update UI song details
   function updatePlayer() {
     let song = songs[current_song_index];
 
@@ -93,6 +105,7 @@ window.onload = () => {
     audio_player.src = song.song_path;
   }
 
+  // Toggle play-pause icon
   function TogglePlaySong() {
     if (audio_player.paused) {
       audio_player.play();
@@ -105,6 +118,7 @@ window.onload = () => {
     }
   }
 
+  // Next-Prev song functionality
   function changeSong(next = true) {
     if (next) {
       current_song_index++;
